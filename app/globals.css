@@ -20,14 +20,6 @@
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-wing {
-  animation: wing 0.5s ease-in-out infinite;
-}
-
 @keyframes fly-updown {
   0%, 100% {
     transform: translateY(0) translateX(-50%);
@@ -72,5 +64,51 @@
 .honey-button:active::after {
   opacity: 1;
   animation: honeyDrip 0.5s ease-out;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0);
+  }
+  100% {
+    transform: translateY(110vh) translateX(-20px);
+  }
+}
+
+.animate-snowfall {
+  animation: snowfall 5s linear infinite;
+}
+
+.snow-bg {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+.snow-bg::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+@keyframes float-snowflake {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float-snowflake 4s ease-in-out infinite;
 }
 

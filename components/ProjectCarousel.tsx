@@ -12,9 +12,10 @@ interface Project {
 
 interface ProjectCarouselProps {
   projects: Project[]
+  isSnowTheme: boolean
 }
 
-export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
+export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, isSnowTheme }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextProject = () => {
@@ -30,7 +31,11 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) =>
       <div className="flex justify-between items-center">
         <button
           onClick={prevProject}
-          className="p-2 rounded-full bg-yellow-900/50 text-white hover:bg-yellow-900/70 transition-colors"
+          className={`p-2 rounded-full ${
+            isSnowTheme
+              ? 'bg-blue-500/50 text-white hover:bg-blue-600/70'
+              : 'bg-yellow-900/50 text-white hover:bg-yellow-900/70'
+          } transition-colors`}
           aria-label="Previous project"
         >
           <ChevronLeft size={24} />
@@ -42,12 +47,17 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) =>
               title={project.title}
               description={project.description}
               image={project.image}
+              isSnowTheme={isSnowTheme}
             />
           ))}
         </div>
         <button
           onClick={nextProject}
-          className="p-2 rounded-full bg-yellow-900/50 text-white hover:bg-yellow-900/70 transition-colors"
+          className={`p-2 rounded-full ${
+            isSnowTheme
+              ? 'bg-blue-500/50 text-white hover:bg-blue-600/70'
+              : 'bg-yellow-900/50 text-white hover:bg-yellow-900/70'
+          } transition-colors`}
           aria-label="Next project"
         >
           <ChevronRight size={24} />
