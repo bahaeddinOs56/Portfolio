@@ -22,12 +22,14 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'bee' | 'snow' | 'space'
     if (savedTheme) {
       setTheme(savedTheme)
     }
+    setLoading(false)
   }, [])
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -119,6 +121,12 @@ export default function Home() {
   }
 
   return (
+    <>
+    {loading ? (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+      </div>
+    ) : (
     <main className={`min-h-screen ${
       theme === 'snow'
         ? 'bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400'
@@ -474,6 +482,8 @@ export default function Home() {
         </section>
       </SmoothScroll>
     </main>
+    )}
+    </>
   )
 }
 
