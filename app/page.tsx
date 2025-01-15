@@ -23,6 +23,13 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'bee' | 'snow' | 'space'
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
+  }, [])
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setIsSubmitting(true)
@@ -105,9 +112,9 @@ export default function Home() {
 
   const toggleTheme = () => {
     setTheme(prev => {
-      if (prev === 'bee') return 'snow'
-      if (prev === 'snow') return 'space'
-      return 'bee'
+      const newTheme = prev === 'bee' ? 'snow' : prev === 'snow' ? 'space' : 'bee'
+      localStorage.setItem('theme', newTheme)
+      return newTheme
     })
   }
 
