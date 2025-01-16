@@ -219,17 +219,17 @@ export default function Home() {
       <SmoothScroll>
         {/* Hero Section */}
         <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
-          <div className="container mx-auto px-4 py-12 md:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div>
-                <div className={`inline-block px-4 py-2 rounded-full mb-4 md:mb-6 text-sm md:text-base ${
+          <div className="container mx-auto px-4 py-8 md:py-20">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0">
+                <div className={`inline-block px-4 py-2 rounded-full mb-4 text-sm ${
                   theme === 'snow' ? 'bg-blue-500/20' : theme === 'space' ? 'bg-gray-700/20 text-[#E6E6FA]' : 'bg-[#B8860B]/20'
                 }`}>
                   Welcome to my Portfolio
                 </div>
-                <h1 className={`text-4xl md:text-6xl font-bold mb-4 md:mb-6 ${
+                <h1 className={`text-3xl md:text-5xl font-bold mb-4 ${
                   theme === 'space' ? 'text-[#E6E6FA]' : 'text-[#1A1A1A]'
-                } space-y-2 md:space-y-4`}>
+                } space-y-2`}>
                   <div>
                     <TypingText text="Hi! I'm Bahaeddine" />
                   </div>
@@ -242,13 +242,13 @@ export default function Home() {
                 </h1>
                 <div className={`${
                   theme === 'space' ? 'text-[#E6E6FA]' : 'text-[#1A1A1A]'
-                } mb-6 md:mb-8 space-y-1 md:space-y-2`}>
-                  <p className="text-lg md:text-xl font-semibold">BSc in Big Data from ENSA Ibn Tofail</p>
-                  <p className="text-lg md:text-xl font-semibold">42 Network (1337) at UM6P Benguerir</p>
+                } mb-6 space-y-1`}>
+                  <p className="text-base md:text-lg font-semibold">BSc in Big Data from ENSA Ibn Tofail</p>
+                  <p className="text-base md:text-lg font-semibold">42 Network (1337) at UM6P Benguerir</p>
                 </div>
                 <a 
                   href="#contact" 
-                  className={`group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-lg shadow-2xl text-sm md:text-base ${
+                  className={`group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-lg shadow-2xl text-sm ${
                     theme === 'snow'
                       ? 'bg-blue-500 hover:bg-blue-600 text-white'
                       : theme === 'space'
@@ -262,7 +262,7 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-              <div className="relative flex items-center justify-center mt-8 md:mt-0">
+              <div className="w-full md:w-1/2 flex justify-center">
                 {theme === 'snow' ? <SnowmanCharacter /> : theme === 'space' ? <AlienCharacter /> : <BeeCharacter />}
               </div>
             </div>
@@ -270,7 +270,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className={`py-16 md:py-20 ${
+        <section id="skills" className={`py-12 md:py-20 ${
           theme === 'snow'
             ? 'bg-gradient-to-b from-blue-300 to-blue-400'
             : theme === 'space'
@@ -278,11 +278,11 @@ export default function Home() {
             : 'bg-gradient-to-b from-[#B8860B] to-[#D4A017]'
         }`}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 md:mb-8 text-white">Skills</h2>
-            <p className="text-center text-white mb-12 md:mb-16 max-w-3xl mx-auto text-base md:text-xl">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 md:mb-8 text-white">Skills</h2>
+            <p className="text-center text-white mb-8 md:mb-12 max-w-3xl mx-auto text-sm md:text-base">
               Here are my top skills and proficiency levels. Each skill represents years of dedication and practical experience in various projects and challenges. Tap or hover over each circle to see the full percentage.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               <SkillCircle skill="C/C++" percentage={95} theme={theme} />
               <SkillCircle skill="Web Development" percentage={85} theme={theme} />
               <SkillCircle skill="Data Analysis" percentage={80} theme={theme} />
@@ -378,13 +378,13 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 md:py-20">
+        <section id="contact" className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-4">Let's Connect</h2>
-            <p className="text-center text-[#1A1A1A] mb-8 md:mb-12 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Let's Connect</h2>
+            <p className="text-center text-[#1A1A1A] mb-8 max-w-2xl mx-auto text-sm md:text-base">
               I'm always open to new opportunities and collaborations. Get in touch!
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="flex justify-center items-center">
                 {theme === 'bee' && <HoneyPotWithBee />}
                 {theme === 'snow' && <SnowGlobe />}
@@ -392,15 +392,15 @@ export default function Home() {
               </div>
               <div className={`${
                 theme === 'snow' ? 'bg-blue-200/30' : theme === 'space' ? 'bg-gray-800/30' : 'bg-[#FFD700]/30'
-              } p-6 md:p-8 rounded-2xl backdrop-blur-sm`}>
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              } p-6 rounded-2xl backdrop-blur-sm`}>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input 
                       type="text" 
                       name="firstName" 
                       placeholder="First Name" 
                       required 
-                      className={`w-full px-4 py-3 rounded-lg ${
+                      className={`w-full px-4 py-2 rounded-lg text-sm ${
                         theme === 'snow' 
                           ? 'bg-blue-900/50 border border-blue-700 focus:border-blue-500' 
                           : theme === 'space'
@@ -413,7 +413,7 @@ export default function Home() {
                       name="lastName" 
                       placeholder="Last Name" 
                       required 
-                      className={`w-full px-4 py-3 rounded-lg ${
+                      className={`w-full px-4 py-2 rounded-lg text-sm ${
                         theme === 'snow' 
                           ? 'bg-blue-900/50 border border-blue-700 focus:border-blue-500' 
                           : theme === 'space'
@@ -427,7 +427,7 @@ export default function Home() {
                     name="email" 
                     placeholder="Email Address" 
                     required 
-                    className={`w-full px-4 py-3 rounded-lg ${
+                    className={`w-full px-4 py-2 rounded-lg text-sm ${
                       theme === 'snow' 
                         ? 'bg-blue-900/50 border border-blue-700 focus:border-blue-500' 
                         : theme === 'space'
@@ -439,7 +439,7 @@ export default function Home() {
                     type="tel" 
                     name="phone" 
                     placeholder="Phone No." 
-                    className={`w-full px-4 py-3 rounded-lg ${
+                    className={`w-full px-4 py-2 rounded-lg text-sm ${
                       theme === 'snow' 
                         ? 'bg-blue-900/50 border border-blue-700 focus:border-blue-500' 
                         : theme === 'space'
@@ -452,7 +452,7 @@ export default function Home() {
                     placeholder="Message" 
                     rows={4} 
                     required 
-                    className={`w-full px-4 py-3 rounded-lg ${
+                    className={`w-full px-4 py-2 rounded-lg text-sm ${
                       theme === 'snow' 
                         ? 'bg-blue-900/50 border border-blue-700 focus:border-blue-500' 
                         : theme === 'space'
@@ -468,13 +468,13 @@ export default function Home() {
                         : theme === 'space'
                         ? 'bg-gray-700 text-gray-100 hover:bg-gray-600'
                         : 'honey-button bg-[#1A1A1A] text-[#FFD700] hover:opacity-90'
-                    } rounded-lg font-semibold transition-colors disabled:opacity-50`}
+                    } rounded-lg font-semibold transition-colors disabled:opacity-50 text-sm`}
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                   {formState.message && (
-                    <p className={`text-center ${formState.success ? 'text-green-500' : 'text-red-500'}`}>
+                    <p className={`text-center ${formState.success ? 'text-green-500' : 'text-red-500'} text-sm`}>
                       {formState.message}
                     </p>
                   )}
