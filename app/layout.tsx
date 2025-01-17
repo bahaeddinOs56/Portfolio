@@ -43,3 +43,5 @@ export default function RootLayout({
 }
 
 // yak akhay
+// allaho akbar 
+// zidni
