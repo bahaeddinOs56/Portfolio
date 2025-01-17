@@ -490,4 +490,3 @@ export default function Home() {
   )
 }
 
-// khasni nzid had lcommit a3mi
