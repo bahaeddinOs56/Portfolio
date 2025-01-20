@@ -389,13 +389,13 @@ export default function Home() {
                       title: "Hisabi",
                       description:
                         "A comprehensive Moroccan tax calculator featuring multilingual support, various tax calculations, and a modern interface with Moroccan-inspired design.",
-                      image: "/hisabi.jpg",
+                      image: "/hisabi.JPG",
                     },
                     {
                       title: "Cosmic Coding Journey",
                       description:
                         "An interactive space-themed learning platform using AI to generate personalized coding challenges, featuring real-time problem generation with GPT-4 and adaptive learning paths.",
-                      image: "/cosmic-learning.jpg",
+                      image: "/cosmic-learning.JPG",
                     },
                     {
                       title: "Portfolio Website",
