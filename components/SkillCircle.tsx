@@ -60,14 +60,31 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
                 <stop offset="0%" stopColor="#E0F7FA" />
                 <stop offset="100%" stopColor="#B2EBF2" />
               </linearGradient>
+              <radialGradient id="iceGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#E0F7FA" stopOpacity="0.3" />
+              </radialGradient>
               <filter id="snowFilter">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
                 <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" />
               </filter>
+              <filter id="iceFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
             </defs>
 
-            {/* Background circle */}
-            <circle cx="50" cy="50" r="45" fill="url(#snowGradient)" />
+            {/* Ice effect */}
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill="url(#iceGradient)"
+              filter="url(#iceFilter)"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+            />
 
             {/* Frost circle */}
             <motion.circle
@@ -81,6 +98,20 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
               initial={{ strokeDashoffset: circumference }}
               animate={{ strokeDashoffset }}
               transition={{ duration: 2, ease: "easeInOut" }}
+            />
+
+            {/* Shimmering effect */}
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke="url(#iceGradient)"
+              strokeWidth="4"
+              strokeDasharray="5 10"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             />
 
             {/* Snowflakes */}
