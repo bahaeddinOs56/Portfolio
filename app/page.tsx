@@ -16,7 +16,7 @@ import { SnowGlobe } from "../components/SnowGlobe"
 import { SpaceScene } from "../components/SpaceScene"
 
 export default function Home() {
-  const [theme, setTheme] = useState<"bee" | "snow" | "space">("bee")
+  const [theme, setTheme] = useState<"bee" | "snow" | "space">("space")
   const [showSidebar, setShowSidebar] = useState(true)
   const [formState, setFormState] = useState({ success: false, message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -28,6 +28,8 @@ export default function Home() {
     const savedTheme = localStorage.getItem("theme") as "bee" | "snow" | "space"
     if (savedTheme) {
       setTheme(savedTheme)
+    } else {
+      localStorage.setItem("theme", "space")
     }
     setLoading(false)
   }, [])
@@ -117,7 +119,7 @@ export default function Home() {
 
   const toggleTheme = () => {
     setTheme((prev) => {
-      const newTheme = prev === "bee" ? "snow" : prev === "snow" ? "space" : "bee"
+      const newTheme = prev === "space" ? "bee" : prev === "bee" ? "snow" : "space"
       localStorage.setItem("theme", newTheme)
       return newTheme
     })
@@ -233,15 +235,6 @@ export default function Home() {
                       </svg>
                     </a>
                     <a
-                      href="#"
-                      className={`${theme === "snow" ? "hover:text-blue-300" : theme === "space" ? "hover:text-gray-300" : "hover:text-yellow-300"} transition-colors`}
-                    >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    </a>
-                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-                    <a
                       href="#contact"
                       className={`px-6 py-2 rounded-full transition-all ${
                         theme === "snow"
@@ -269,7 +262,7 @@ export default function Home() {
             {/* Hero Section */}
             <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
               <div className="container mx-auto px-4 py-8 md:py-20">
-                <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-col md:flex-row items-center justify-between md:space-x-16">
                   <div className="w-full md:w-1/2 mb-8 md:mb-0">
                     <div
                       className={`inline-block px-4 py-2 rounded-full mb-4 text-sm ${
@@ -282,51 +275,55 @@ export default function Home() {
                     >
                       Welcome to my Portfolio
                     </div>
-                    <h1
-                      className={`text-3xl md:text-5xl font-bold mb-4 ${
-                        theme === "space" ? "text-[#E6E6FA]" : "text-[#1A1A1A]"
-                      } space-y-2`}
-                    >
-                      <div>
-                        <TypingText text="Hi! I'm Bahaeddine" />
-                      </div>
-                      <div>
-                        <TypingText text="a Software Developer!" delay={150} />
-                      </div>
-                    </h1>
-                    <div className={`${theme === "space" ? "text-[#E6E6FA]" : "text-[#1A1A1A]"} mb-6 space-y-1`}>
-                      <p className="text-base md:text-lg font-semibold">BSc in Big Data from ENSA Ibn Tofail</p>
-                      <p className="text-base md:text-lg font-semibold">42 Network (1337) at UM6P Benguerir</p>
-                    </div>
-                    <a
-                      href="#contact"
-                      className={`group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-lg shadow-2xl text-sm ${
-                        theme === "snow"
-                          ? "bg-blue-500 hover:bg-blue-600 text-white"
-                          : theme === "space"
-                            ? "bg-[#E6E6FA] hover:bg-[#D8D8FF] text-gray-900"
-                            : "bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] hover:bg-gradient-to-br hover:from-[#FF8C00] hover:via-[#FFA500] hover:to-[#FFD700] text-[#1A1A1A]"
-                      }`}
-                    >
-                      <span className="relative transition duration-300 group-hover:text-white">Let's Connect</span>
-                      <svg
-                        className="relative w-4 h-4 ml-2 transition duration-300 group-hover:text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                      <h1
+                        className={`text-3xl md:text-5xl font-bold mb-4 ${
+                          theme === "space" ? "text-[#E6E6FA]" : "text-[#1A1A1A]"
+                        } space-y-2`}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
+                        <div>
+                          <TypingText text="Hi! I'm Bahaeddine" />
+                        </div>
+                        <div>
+                          <TypingText text="a Software Developer!" delay={150} />
+                        </div>
+                      </h1>
+                      <div className={`${theme === "space" ? "text-[#E6E6FA]" : "text-[#1A1A1A]"} mb-6 space-y-1`}>
+                        <p className="text-base md:text-lg font-semibold">BSc in Big Data from ENSA Ibn Tofail</p>
+                        <p className="text-base md:text-lg font-semibold">42 Network (1337) at UM6P Benguerir</p>
+                      </div>
+                      <a
+                        href="#contact"
+                        className={`group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-lg shadow-2xl text-sm ${
+                          theme === "snow"
+                            ? "bg-blue-500 hover:bg-blue-600 text-white"
+                            : theme === "space"
+                              ? "bg-[#E6E6FA] hover:bg-[#D8D8FF] text-gray-900"
+                              : "bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] hover:bg-gradient-to-br hover:from-[#FF8C00] hover:via-[#FFA500] hover:to-[#FFD700] text-[#1A1A1A]"
+                        }`}
+                      >
+                        <span className="relative transition duration-300 group-hover:text-white">Let's Connect</span>
+                        <svg
+                          className="relative w-4 h-4 ml-2 transition duration-300 group-hover:text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                  <div className="w-full md:w-1/2 flex justify-center">
-                    {theme === "snow" ? (
-                      <SnowmanCharacter />
-                    ) : theme === "space" ? (
-                      <AlienCharacter />
-                    ) : (
-                      <BeeCharacter />
-                    )}
+                  <div className={`w-full md:w-2/5 hidden md:flex justify-end items-center`}>
+                    <div className="w-full max-w-sm">
+                      {theme === "snow" ? (
+                        <SnowmanCharacter />
+                      ) : theme === "space" ? (
+                        <AlienCharacter />
+                      ) : (
+                        <BeeCharacter />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -565,6 +562,10 @@ export default function Home() {
               </div>
             </section>
           </SmoothScroll>
+          {/* Theme Toggle Button */}
+          <div className="fixed bottom-4 right-4 z-50">
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </div>
         </main>
       )}
     </>

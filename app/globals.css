@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -12,7 +13,8 @@
 }
 
 @keyframes wing {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(0deg) scaleX(1);
   }
   50% {
@@ -21,7 +23,8 @@
 }
 
 @keyframes fly-updown {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(-50%);
   }
   50% {
@@ -50,7 +53,7 @@
 }
 
 .honey-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -88,7 +91,7 @@
 }
 
 .snow-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -100,7 +103,8 @@
 }
 
 @keyframes float-snowflake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -109,11 +113,12 @@
 }
 
 .animate-float {
-  animation: float-snowflake 4s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes space-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(1deg);
   }
   50% {
@@ -121,11 +126,30 @@
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
 .space-theme .animate-float {
   animation: space-float 6s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
