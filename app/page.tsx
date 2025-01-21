@@ -210,10 +210,10 @@ export default function Home() {
                     Projects
                   </a>
                   <a
-                    href="#portfolio-description"
+                    href="#professional-experiences"
                     className={`block py-2 ${theme === "snow" ? "hover:text-blue-300" : theme === "space" ? "hover:text-gray-300" : "hover:text-yellow-300"} transition-colors`}
                   >
-                    About
+                    Professional Experiences
                   </a>
                   <div className="flex items-center space-x-4 mt-4 md:mt-0">
                     <a
@@ -412,44 +412,48 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Portfolio Project Description */}
-            <section id="portfolio-description" className="py-16 md:py-20">
+            {/* Professional Experiences Section */}
+            <section id="professional-experiences" className="py-16 md:py-20">
               <div className="container mx-auto px-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 md:mb-8">About This Portfolio</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 md:mb-8">Professional Experiences</h2>
                 <div
                   className={`${
                     theme === "snow" ? "bg-blue-200/10" : theme === "space" ? "bg-gray-800/10" : "bg-white/10"
                   } backdrop-blur-md rounded-lg p-6 md:p-8 text-white`}
                 >
-                  <h3 className="text-2xl font-semibold mb-4">Technologies Used:</h3>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>Next.js 13 with App Router</li>
-                    <li>React 18</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind CSS</li>
-                    <li>Framer Motion for animations</li>
-                    <li>React Hook Form for form handling</li>
-                    <li>Custom React hooks</li>
-                  </ul>
-                  <h3 className="text-2xl font-semibold mb-4">Key Features:</h3>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>Responsive design for all device sizes</li>
-                    <li>Interactive particle background</li>
-                    <li>Animated bee character with eye-tracking</li>
-                    <li>Smooth scrolling between sections</li>
-                    <li>Dynamic skill circles with flower animations for the bee theme</li>
-                    <li>Project carousel for showcasing work</li>
-                    <li>Contact form with client-side validation</li>
-                    <li>Honey-themed UI elements and animations</li>
-                    <li>Theme switching between bee, snow, and space themes</li>
-                  </ul>
-                  <p className="text-lg">
-                    This portfolio website was built to showcase my skills as a software developer, combining modern web
-                    technologies with creative design elements. The bee theme represents my work ethic and ability to
-                    collaborate effectively in team environments, while the snow theme demonstrates versatility and
-                    adaptability in design. The space theme showcases my passion for innovation and exploring new
-                    frontiers in technology.
-                  </p>
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-2">Freelance Software Developer</h3>
+                      <p className="text-lg mb-2">Remote, January 2024 - January 2025 (1 year 1 month)</p>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Developed custom software solutions for various clients</li>
+                        <li>Managed multiple projects simultaneously, ensuring timely delivery</li>
+                        <li>Utilized a wide range of technologies to meet diverse client needs</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-2">Web Automation Project Leader – AssurFrance</h3>
+                      <p className="text-lg mb-2">
+                        Agdal, Rabat-Salé-Kénitra, Morocco (On-site), March 2023 - August 2023 (6 months)
+                      </p>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Led a team in developing web automation solutions for insurance processes</li>
+                        <li>Implemented efficient workflows to streamline operations</li>
+                        <li>Collaborated with stakeholders to ensure project success</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-2">Software Developer Intern – Allianz Assurance</h3>
+                      <p className="text-lg mb-2">
+                        Rabat, Rabat-Salé-Kénitra, Morocco (On-site), January 2022 - June 2022 (6 months)
+                      </p>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Assisted in the development and maintenance of insurance software solutions</li>
+                        <li>Gained hands-on experience in the insurance industry's software ecosystem</li>
+                        <li>Contributed to improving existing codebase and implementing new features</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -458,7 +462,11 @@ export default function Home() {
             <section id="contact" className="py-12 md:py-20">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Let's Connect</h2>
-                <p className="text-center text-[#1A1A1A] mb-8 max-w-2xl mx-auto text-sm md:text-base">
+                <p
+                  className={`text-center mb-8 max-w-2xl mx-auto text-sm md:text-base ${
+                    theme === "space" ? "text-gray-200" : "text-[#1A1A1A]"
+                  }`}
+                >
                   I'm always open to new opportunities and collaborations. Get in touch!
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
