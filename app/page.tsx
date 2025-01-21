@@ -37,7 +37,7 @@ export default function Home() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setIsSubmitting(true)
-    setFormState({ success: false, message: "" }) // Reset form state
+    setFormState({ success: false, message: "" })
 
     const formData = new FormData(event.currentTarget)
     const data = Object.fromEntries(formData.entries())
@@ -51,15 +51,13 @@ export default function Home() {
         body: JSON.stringify(data),
       })
 
-      // Always set success message, regardless of the actual response
       setFormState({
         success: true,
         message: "Your message has been sent successfully!",
       })
-      event.currentTarget.reset() // Reset form
+      event.currentTarget.reset()
     } catch (error) {
       console.error("Error:", error)
-      // Even if there's an error, we'll still show a success message
       setFormState({
         success: true,
         message: "Your message has been sent successfully!",
@@ -219,19 +217,13 @@ export default function Home() {
                   </a>
                   <div className="flex items-center space-x-4 mt-4 md:mt-0">
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/bahaeddine-m-165a74347/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`${theme === "snow" ? "hover:text-blue-300" : theme === "space" ? "hover:text-gray-300" : "hover:text-yellow-300"} transition-colors`}
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className={`${theme === "snow" ? "hover:text-blue-300" : theme === "space" ? "hover:text-gray-300" : "hover:text-yellow-300"} transition-colors`}
-                    >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                       </svg>
                     </a>
                     <a
@@ -344,14 +336,20 @@ export default function Home() {
                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 md:mb-8 text-white">Skills</h2>
                 <p className="text-center text-white mb-8 md:mb-12 max-w-3xl mx-auto text-sm md:text-base">
                   Here are my top skills and proficiency levels. Each skill represents years of dedication and practical
-                  experience in various projects and challenges. Tap or hover over each circle to see the full
-                  percentage.
+                  experience in various projects and challenges.{" "}
+                  {theme === "bee"
+                    ? "Watch as the flowers bloom and bees pollinate to reveal my skill levels!"
+                    : "Tap or hover over each skill to see the full percentage."}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
                   <SkillCircle skill="C/C++" percentage={95} theme={theme} />
                   <SkillCircle skill="Web Development" percentage={85} theme={theme} />
                   <SkillCircle skill="Data Analysis" percentage={80} theme={theme} />
                   <SkillCircle skill="Cyber Security" percentage={75} theme={theme} />
+                  <SkillCircle skill="Python" percentage={90} theme={theme} />
+                  <SkillCircle skill="Machine Learning" percentage={70} theme={theme} />
+                  <SkillCircle skill="DevOps" percentage={65} theme={theme} />
+                  <SkillCircle skill="Database Management" percentage={85} theme={theme} />
                 </div>
               </div>
             </section>
@@ -439,17 +437,18 @@ export default function Home() {
                     <li>Interactive particle background</li>
                     <li>Animated bee character with eye-tracking</li>
                     <li>Smooth scrolling between sections</li>
-                    <li>Dynamic skill circles with hover animations</li>
+                    <li>Dynamic skill circles with flower animations for the bee theme</li>
                     <li>Project carousel for showcasing work</li>
                     <li>Contact form with client-side validation</li>
                     <li>Honey-themed UI elements and animations</li>
-                    <li>Theme switching between bee and snow themes</li>
+                    <li>Theme switching between bee, snow, and space themes</li>
                   </ul>
                   <p className="text-lg">
                     This portfolio website was built to showcase my skills as a software developer, combining modern web
                     technologies with creative design elements. The bee theme represents my work ethic and ability to
                     collaborate effectively in team environments, while the snow theme demonstrates versatility and
-                    adaptability in design.
+                    adaptability in design. The space theme showcases my passion for innovation and exploring new
+                    frontiers in technology.
                   </p>
                 </div>
               </div>

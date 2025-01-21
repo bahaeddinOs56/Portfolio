@@ -146,10 +146,149 @@
   animation: gentle-pulse 2s ease-in-out infinite;
 }
 
+@keyframes honeyDrip {
+  0% {
+    stroke-dashoffset: 565.48;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.honey-drip {
+  animation: honeyDrip 1.5s ease-in-out forwards;
+}
+
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+.flower {
+  transition: all 0.5s ease-out;
+}
+
+.petal {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  transform-origin: bottom center;
+}
+
+.petal-1 {
+  transform: rotate(0deg);
+}
+.petal-2 {
+  transform: rotate(72deg);
+}
+.petal-3 {
+  transform: rotate(144deg);
+}
+.petal-4 {
+  transform: rotate(216deg);
+}
+.petal-5 {
+  transform: rotate(288deg);
+}
+
+.bloomed .petal {
+  opacity: 1;
+  animation: bloomPetal 1s ease-out forwards;
+}
+
+.bloomed .center {
+  animation: bloomCenter 1s ease-out forwards;
+}
+
+@keyframes bloomPetal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bloomCenter {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.petal {
+  width: 60px;
+  height: 60px;
+  background-color: #ffd700;
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom right;
+}
+
+.center {
+  width: 40px;
+  height: 40px;
+  background-color: #ffa500;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bee {
+  width: 20px;
+  height: 20px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  position: absolute;
+  animation: flyBee 5s infinite ease-in-out;
+}
+
+.bee::before,
+.bee::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bee::before {
+  width: 100%;
+  height: 50%;
+  top: 25%;
+  left: 0;
+  border-radius: 20px;
+}
+
+.bee::after {
+  width: 4px;
+  height: 8px;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+@keyframes flyBee {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(100px, -50px) scale(0.8);
+  }
+  50% {
+    transform: translate(200px, 0) scale(1);
+  }
+  75% {
+    transform: translate(100px, 50px) scale(0.8);
   }
 }
 
