@@ -14,17 +14,18 @@ interface Project {
 interface ProjectCarouselProps {
   projects: Project[]
   theme: "bee" | "snow" | "space"
+  itemsPerPage?: number
 }
 
-export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, theme }) => {
+export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, theme, itemsPerPage = 3 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+    setCurrentIndex((prevIndex) => (prevIndex + itemsPerPage) % projects.length)
   }
 
   const prevProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length)
+    setCurrentIndex((prevIndex) => (prevIndex - itemsPerPage + projects.length) % projects.length)
   }
 
   return (
@@ -43,8 +44,8 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, them
         >
           <ChevronLeft size={24} />
         </button>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mx-4">
-          {projects.slice(currentIndex, currentIndex + 3).map((project, index) => (
+        <div className={`grid grid-cols-1 md:grid-cols-${itemsPerPage} gap-4 md:gap-6 lg:gap-8 mx-4`}>
+          {projects.slice(currentIndex, currentIndex + itemsPerPage).map((project, index) => (
             <ProjectCard
               key={`${project.title}-${currentIndex + index}`}
               title={project.title}

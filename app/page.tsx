@@ -253,7 +253,7 @@ export default function Home() {
           <SmoothScroll>
             {/* Hero Section */}
             <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
-              <div className="container mx-auto px-4 py-8 md:py-20">
+              <div className="container mx-auto px-4 max-w-7xl py-8 md:py-20">
                 <div className="flex flex-col md:flex-row items-center justify-between md:space-x-16">
                   <div className="w-full md:w-1/2 mb-8 md:mb-0">
                     <div
@@ -269,7 +269,7 @@ export default function Home() {
                     </div>
                     <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
                       <h1
-                        className={`text-3xl md:text-5xl font-bold mb-4 ${
+                        className={`text-4xl md:text-6xl font-bold mb-4 ${
                           theme === "space" ? "text-[#E6E6FA]" : "text-[#1A1A1A]"
                         } space-y-2`}
                       >
@@ -306,8 +306,8 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  <div className={`w-full md:w-2/5 hidden md:flex justify-end items-center`}>
-                    <div className="w-full max-w-sm">
+                  <div className={`w-full md:w-1/2 flex justify-center items-center`}>
+                    <div className="w-full max-w-md">
                       {theme === "snow" ? (
                         <SnowmanCharacter />
                       ) : theme === "space" ? (
@@ -332,7 +332,7 @@ export default function Home() {
                     : "bg-gradient-to-b from-[#B8860B] to-[#D4A017]"
               }`}
             >
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-4 max-w-7xl">
                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 md:mb-8 text-white">Skills</h2>
                 <p className="text-center text-white mb-8 md:mb-12 max-w-3xl mx-auto text-sm md:text-base">
                   Here are my top skills and proficiency levels. Each skill represents years of dedication and practical
@@ -341,7 +341,7 @@ export default function Home() {
                     ? "Watch as the flowers bloom and bees pollinate to reveal my skill levels!"
                     : "Tap or hover over each skill to see the full percentage."}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative">
                   <SkillCircle skill="C/C++" percentage={95} theme={theme} />
                   <SkillCircle skill="Web Development" percentage={85} theme={theme} />
                   <SkillCircle skill="Data Analysis" percentage={80} theme={theme} />
@@ -356,7 +356,7 @@ export default function Home() {
 
             {/* Projects Section */}
             <section id="projects" className="py-16 md:py-20">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-4 max-w-7xl">
                 <h2 className="text-4xl font-bold text-center mb-4">Projects</h2>
                 <p className="text-center text-[#1A1A1A] mb-8 md:mb-12 max-w-2xl mx-auto">
                   Check out some of my recent projects.
@@ -408,13 +408,14 @@ export default function Home() {
                     },
                   ]}
                   theme={theme}
+                  itemsPerPage={3}
                 />
               </div>
             </section>
 
             {/* Professional Experiences Section */}
             <section id="professional-experiences" className="py-16 md:py-20">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-4 max-w-7xl">
                 <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 md:mb-8">Professional Experiences</h2>
                 <div
                   className={`${
@@ -460,7 +461,7 @@ export default function Home() {
 
             {/* Contact Section */}
             <section id="contact" className="py-12 md:py-20">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-4 max-w-7xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Let's Connect</h2>
                 <p
                   className={`text-center mb-8 max-w-2xl mx-auto text-sm md:text-base ${

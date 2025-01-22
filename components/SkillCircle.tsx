@@ -46,14 +46,14 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
     return (
       <motion.div
         ref={skillRef}
-        className="flex flex-col items-center justify-center p-4 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-blue-100 bg-opacity-30 backdrop-blur-sm"
+        className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-blue-100 bg-opacity-30 backdrop-blur-sm"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative w-32 h-32">
+        <div className="relative w-40 h-40">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <defs>
               <linearGradient id="snowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -138,11 +138,11 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 0.5 }}
           >
-            <span className="text-3xl font-bold text-blue-900">{percentage}%</span>
+            <span className="text-4xl font-bold text-blue-900">{percentage}%</span>
           </motion.div>
         </div>
         <motion.h3
-          className="mt-4 text-lg font-semibold text-center"
+          className="mt-4 text-xl font-semibold text-center"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5 }}
@@ -157,14 +157,14 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
     return (
       <motion.div
         ref={skillRef}
-        className="flex flex-col items-center justify-center p-4 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-yellow-100"
+        className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-yellow-100"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative w-32 h-32">
+        <div className="relative w-40 h-40">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <defs>
               <linearGradient id="honeyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -210,11 +210,11 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
           >
-            <span className="text-3xl font-bold text-yellow-900">{percentage}%</span>
+            <span className="text-4xl font-bold text-yellow-900">{percentage}%</span>
           </motion.div>
         </div>
         <motion.h3
-          className="mt-4 text-lg font-semibold text-center"
+          className="mt-4 text-xl font-semibold text-center"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5 }}
@@ -229,14 +229,14 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
   return (
     <motion.div
       ref={skillRef}
-      className="flex flex-col items-center justify-center p-4 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-gray-800 bg-opacity-30 backdrop-blur-sm"
+      className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 bg-gray-800 bg-opacity-30 backdrop-blur-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative w-32 h-32">
+      <div className="relative w-40 h-40">
         <svg className="w-full h-full" viewBox="0 0 100 100">
           <defs>
             <radialGradient id="spaceGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -290,11 +290,11 @@ export const SkillCircle: React.FC<SkillCircleProps> = ({ skill, percentage, the
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <span className="text-3xl font-bold text-white">{percentage}%</span>
+          <span className="text-4xl font-bold text-white">{percentage}%</span>
         </motion.div>
       </div>
       <motion.h3
-        className="mt-4 text-lg font-semibold text-center"
+        className="mt-4 text-xl font-semibold text-center"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}
