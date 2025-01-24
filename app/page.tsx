@@ -256,7 +256,7 @@ export default function Home() {
               <section id="home" className="min-h-screen pt-20 relative overflow-hidden">
                 <div className="w-full max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 md:py-20">
                   <div className="flex flex-col lg:flex-row items-center justify-between lg:space-x-16 xl:space-x-24 2xl:space-x-32">
-                    <div className="w-full lg:w-1/2 xl:w-2/5 mb-8 lg:mb-0">
+                    <div className="w-full lg:w-1/2 xl:w-2/5 mb-8 lg:mb-0 mx-auto text-center lg:text-left">
                       <div
                         className={`inline-block px-4 py-2 rounded-full mb-4 text-sm ${
                           theme === "snow"
@@ -307,7 +307,9 @@ export default function Home() {
                         </a>
                       </div>
                     </div>
-                    <div className={`w-full lg:w-1/2 xl:w-3/5 flex justify-center lg:justify-end items-center`}>
+                    <div
+                      className={`hidden lg:flex w-full lg:w-1/2 xl:w-3/5 justify-center lg:justify-end items-center`}
+                    >
                       <div className="w-full max-w-sm xl:max-w-md 2xl:max-w-lg">
                         {theme === "snow" ? (
                           <SnowmanCharacter />
