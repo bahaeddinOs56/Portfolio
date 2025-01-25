@@ -581,4 +581,3 @@ export default function Home() {
   )
 }
 
-// Maximum annual deduction
