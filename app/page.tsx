@@ -580,5 +580,3 @@ export default function Home() {
     </>
   )
 }
-
-//ok ok ok ok 
