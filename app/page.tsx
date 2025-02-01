@@ -580,5 +580,3 @@ export default function Home() {
     </>
   )
 }
-// ser 3llah
-// ser 3llah
