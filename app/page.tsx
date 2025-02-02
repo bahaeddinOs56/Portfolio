@@ -581,14 +581,3 @@ export default function Home() {
   )
 }
 
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah lawah lawah
-// lawah la
